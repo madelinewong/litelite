@@ -9,6 +9,8 @@ boxes.forEach(function(box, index){
 })
 
 resetBtn.addEventListener('click', clearGrid);
+
+
 //fuctions
 function toggleRed(e){
     const element = e.target;
@@ -16,5 +18,7 @@ function toggleRed(e){
 }
 
 function clearGrid(e){
-    console.log('clearing the grid');
+    boxes.forEach((box, index) => {
+        box.classList.remove('red');
+    });
 }
