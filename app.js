@@ -5,7 +5,7 @@ const boxes = document.querySelectorAll('.box');
 //eventListeners 
 boxes.forEach(function(box, index){
     box.addEventListener('click', toggleRed);
-    box.addEventListener('click', toggleYellow);
+    box.addEventListener('click ', toggleYellow);
 
 })
 
