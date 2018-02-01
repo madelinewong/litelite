@@ -1,6 +1,7 @@
 //variables
 const resetBtn = document.querySelector('#reset');
 const boxes = document.querySelectorAll('.box');
+const colorPicker = document.querySelector('.colorPicker');
 
 //eventListeners 
 boxes.forEach(function(box, index){
@@ -14,9 +15,8 @@ boxes.forEach(function(box, index){
 
 resetBtn.addEventListener('click', clearGrid);
 
-boxes.forEach(function(box, index){
-   colorPicker.addEventListener('click', toggleColorPicker);
-
+colorPicker.forEach(function(colorPicker, index){
+    colorPicker.addEventListener('click', toggleColorPicker);
 })
 
 
@@ -36,4 +36,9 @@ function clearGrid(e){
         box.classList.remove('red');
         box.classList.remove('yellow');
     });
+}
+
+function toggleColorPicker(e){
+    const element = e.target; 
+    element.classList.toggle('colorPicker');
 }
