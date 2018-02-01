@@ -4,7 +4,8 @@ const boxes = document.querySelectorAll('.box');
 
 //eventListeners 
 boxes.forEach(function(box, index){
-    box.addEventListener('click', toggleRed); 
+    box.addEventListener('click', toggleRed);
+    box.addEventListener('click', toggleYellow);
 
 })
 
@@ -17,8 +18,14 @@ function toggleRed(e){
     element.classList.toggle('red');
 }
 
+function toggleYellow(e){
+    const element = e.target;
+    element.classList.toggle('yellow');
+}
+
 function clearGrid(e){
     boxes.forEach((box, index) => {
         box.classList.remove('red');
+        box.classList.remove('yellow');
     });
 }
