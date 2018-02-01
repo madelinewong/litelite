@@ -5,11 +5,19 @@ const boxes = document.querySelectorAll('.box');
 //eventListeners 
 boxes.forEach(function(box, index){
     box.addEventListener('click', toggleRed);
-    box.addEventListener('click ', toggleYellow);
 
 })
 
+boxes.forEach(function(box, index){
+    box.addEventListener('click', toggleYellow);
+})
+
 resetBtn.addEventListener('click', clearGrid);
+
+boxes.forEach(function(box, index){
+   colorPicker.addEventListener('click', toggleColorPicker);
+
+})
 
 
 //fuctions
