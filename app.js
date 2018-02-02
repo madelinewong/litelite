@@ -14,24 +14,16 @@ changeGrid();
 //functions
 function toggleRed(e){
     const element = e.target;
-    element.classList.toggle('red');
+    element.classList.
+    
 }
 
-function toggleYellow(e){
-    const element = e.target;
-    element.classList.toggle('yellow');
-}
 
 function clearGrid(e){
     const boxes = document.querySelectorAll('.box');
     boxes.forEach((box, index) => {
         box.classList.remove('red');
     });
-}
-
-function toggleColorPicker(e){
-    const element = e.target; 
-    element.classList.toggle('colorPicker');
 }
 
 function changeGrid(e){
