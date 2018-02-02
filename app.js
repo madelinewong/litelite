@@ -50,17 +50,32 @@ function changeGrid(e){
     const grid = makeGrid(gridSizeValue);
 //set the main to the grid 
    main.innerHTML = ''; //this clears the main area
-   main.appendChild(grid);
+   grid.forEach((row) => {
+     main.appendChild(row);  
+   })
 
 }
 
-function makeGrid(size){
-    const element =  document.createElement('h1');
-    element.textContent = 'Snails!';
-    return element;
-       //make the grid
+function makeGrid(size){  
+    const rows = [];
+    for(let i = 0; i < size; i += 1){
+    //make the grid
     //make a div with class of row 
-    //make a div with class of md-12 with a class of row 
+    const row = document.createElement('div');
+    row.classList.add('row');
+    //make a div with class of col-md-12 with a class of row 
+    const column = document.createElement('div'); 
+    column.classList.add('col-md-12');
+    row.appendChild(column); 
     //make six divs with class of box inside of col-md-12
-    //copy and pasted six times. 
+    for(let i = 0; i < size; i += 1){
+        const box = document.createElement('div'); 
+        box.classList.add('box'); 
+        box.addEventListener('click', toggleRed);
+        column.appendChild(box);
+        }
+        rows.push(row);
+
+    }
+    return rows;
 }
