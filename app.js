@@ -1,25 +1,15 @@
 //variables
 const resetBtn = document.querySelector('#reset');
-const boxes = document.querySelectorAll('.box');
 const colorPicker = document.querySelector('.colorPicker');
 const gridSizeForm = document.querySelector('#grid-size');
 const main = document.querySelector('main');
 
 //eventListeners 
-boxes.forEach(function(box, index){
-    box.addEventListener('click', toggleRed);
-
-})
-
-boxes.forEach(function(box, index){
-    box.addEventListener('click', toggleYellow);
-})
-
 resetBtn.addEventListener('click', clearGrid);
-
-
-
 gridSizeForm.addEventListener('submit', changeGrid);
+
+//initalized or started
+changeGrid();
 
 //functions
 function toggleRed(e){
@@ -33,9 +23,9 @@ function toggleYellow(e){
 }
 
 function clearGrid(e){
+    const boxes = document.querySelectorAll('.box');
     boxes.forEach((box, index) => {
         box.classList.remove('red');
-        box.classList.remove('yellow');
     });
 }
 
@@ -45,7 +35,9 @@ function toggleColorPicker(e){
 }
 
 function changeGrid(e){
+    if(e) {
     e.preventDefault();
+    }
     const gridSizeValue = +gridSizeForm.querySelector('input:checked').value;
     const grid = makeGrid(gridSizeValue);
 //set the main to the grid 
